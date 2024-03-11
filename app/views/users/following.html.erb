@@ -25,6 +25,11 @@
   </div>
 </div>
 
-<% @user.leaders.each do |username| %>
-  <%= render "shared/list", name: username %>
-<% end %>
+
+<ul class="list-group">
+  <% @user.leaders.each do |leader| %>
+    <li class="list-group-item">
+      <%= link_to "#{leader.username}", user_path(leader.username) %>
+    </li>
+  <% end %>
+</ul>
