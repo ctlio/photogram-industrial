@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col md-6 offset-3">
     <h1>
@@ -24,6 +25,13 @@
   </div>
 </div>
 
-  <% @user.own_photos.each do |photo| %>
-      <%= render "photos/photo", photo: photo %>
+
+<ul class="list-group">
+  <% @user.followers.each do |follower| %>
+    <li class="list-group-item">
+      <%= link_to "#{follower.username}", user_path(follower.username) %>
+    </li>
   <% end %>
+</ul>
+
+
