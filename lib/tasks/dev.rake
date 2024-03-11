@@ -63,6 +63,7 @@ task sample_data: :environment do
       photo = user.own_photos.create(
         caption: Faker::Quote.jack_handey,
         image: "https://robohash.org/#{rand(9999)}"
+        image: "https://robohash.org/#{rand(9999)}"
       )
 
       user.followers.each do |follower|
@@ -79,7 +80,7 @@ task sample_data: :environment do
       end
     end
   end
-  
+
   p "There are now #{User.count} users."
   p "There are now #{FollowRequest.count} follow requests."
   p "There are now #{Photo.count} photos."
